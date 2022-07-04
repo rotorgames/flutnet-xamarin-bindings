@@ -13,7 +13,7 @@
     <RootNamespace>Flutnet.ModuleInterop</RootNamespace>
     <AssemblyName>Flutnet.ModuleInterop</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
     <AndroidClassParser>class-parse</AndroidClassParser>
     <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
@@ -64,7 +64,10 @@
     <TransformFile Include="Transforms\EnumMethods.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Flutnet.Interop.Android" Version="2.0.5" />
+    <ProjectReference Include="..\..\src\Flutnet.Interop.Android\Flutnet.Interop.Android.csproj">
+      <Project>{FF7F682C-3813-4A38-9B08-1A5DEF1EE88A}</Project>
+      <Name>Flutnet.Interop.Android</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" Condition="Exists('$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets')" />
 </Project>

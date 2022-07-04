@@ -17,7 +17,7 @@
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -38,11 +38,13 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
+    <AndroidSupportedAbis>x86_64;arm64-v8a;x86;armeabi-v7a</AndroidSupportedAbis>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -56,6 +58,8 @@
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86_64</AndroidSupportedAbis>
+    <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -107,12 +111,29 @@
     <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.2.0.3" />
     <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.2.0.2" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.1.0.5" />
-    <PackageReference Include="Flutnet.Interop.Android" Version="2.0.5" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat">
+      <Version>1.4.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.ConstraintLayout">
+      <Version>2.1.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Flutnet.ModuleInterop.Android\Flutnet.ModuleInterop.Android.csproj">
       <Project>{9116C1C4-0C4E-45B5-807B-172A519AE0D3}</Project>
       <Name>Flutnet.ModuleInterop.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Flutnet.Interop.Android\Flutnet.Interop.Android.csproj">
+      <Project>{FF7F682C-3813-4A38-9B08-1A5DEF1EE88A}</Project>
+      <Name>Flutnet.Interop.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CameraAndroid\CameraAndroid.csproj">
+      <Project>{A63C8A65-F4CE-4875-8D05-0D94689B2AD7}</Project>
+      <Name>CameraAndroid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlutterPluginAndroidLifecycleDebug\FlutterPluginAndroidLifecycleDebug.csproj">
+      <Project>{A7510079-DA77-4C70-AC03-60747E1C7854}</Project>
+      <Name>FlutterPluginAndroidLifecycleDebug</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

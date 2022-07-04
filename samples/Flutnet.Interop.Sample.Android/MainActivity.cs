@@ -4,6 +4,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Flutnet.Interop.Embedding.Android;
+using Flutnet.Interop.Embedding.Engine;
+using Flutnet.Interop.Embedding.Engine.Plugins.Util;
+using IO.Flutter.Plugins;
 
 namespace Flutnet.Interop.Sample
 {
